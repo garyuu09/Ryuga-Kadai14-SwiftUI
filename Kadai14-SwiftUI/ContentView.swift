@@ -14,7 +14,8 @@ struct Fruit {
 }
 
 struct ContentView: View {
-    var fruits = [
+    @State private var showingModal = false
+    @State var fruits = [
         Fruit(name: "りんご", isChecked: false),
         Fruit(name: "みかん", isChecked: true),
         Fruit(name: "バナナ", isChecked: false),
@@ -22,7 +23,7 @@ struct ContentView: View {
     ]
 
     var body: some View {
-        NavigationView{
+        NavigationStack{
             List {
                 ForEach(fruits, id: \.code) { fruit in
                     ZStack {
@@ -39,8 +40,22 @@ struct ContentView: View {
                     }
                 }
             }
+            .listStyle(.plain)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showingModal = true
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                    .fullScreenCover(isPresented: $showingModal) {
+                        AddItemView(fruits: $fruits)
+                    }
+                }
+            }
         }
-        .listStyle(.plain)
+
     }
 }
 

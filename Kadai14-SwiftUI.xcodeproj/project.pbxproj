@@ -11,6 +11,7 @@
 		D6B0732D29DEF40700EAAF90 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B0732C29DEF40700EAAF90 /* ContentView.swift */; };
 		D6B0732F29DEF40800EAAF90 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6B0732E29DEF40800EAAF90 /* Assets.xcassets */; };
 		D6B0733229DEF40800EAAF90 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D6B0733129DEF40800EAAF90 /* Preview Assets.xcassets */; };
+		D6B0733929DEFAB900EAAF90 /* AddItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6B0733829DEFAB900EAAF90 /* AddItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		D6B0732C29DEF40700EAAF90 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D6B0732E29DEF40800EAAF90 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D6B0733129DEF40800EAAF90 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		D6B0733829DEFAB900EAAF90 /* AddItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			children = (
 				D6B0732A29DEF40700EAAF90 /* Kadai14_SwiftUIApp.swift */,
 				D6B0732C29DEF40700EAAF90 /* ContentView.swift */,
+				D6B0733829DEFAB900EAAF90 /* AddItemView.swift */,
 				D6B0732E29DEF40800EAAF90 /* Assets.xcassets */,
 				D6B0733029DEF40800EAAF90 /* Preview Content */,
 			);
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6B0732D29DEF40700EAAF90 /* ContentView.swift in Sources */,
+				D6B0733929DEFAB900EAAF90 /* AddItemView.swift in Sources */,
 				D6B0732B29DEF40700EAAF90 /* Kadai14_SwiftUIApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
