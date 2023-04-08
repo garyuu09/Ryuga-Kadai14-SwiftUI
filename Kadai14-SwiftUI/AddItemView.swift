@@ -8,13 +8,9 @@
 import SwiftUI
 
 struct AddItemView: View {
-    @Environment(\.dismiss) var dismiss
     @State private var newItem = ""
-    @Binding var fruits: [Fruit]
-    //    @Binding var fruits: Array<Dictionary<String, Bool>>
-    //    @Binding var fruits: Binding<[Fruit]>
-    //    @Binding var fruits: Fruit
-    //    色々試して、なんとか正解?にたどり着いたが少し、理解が甘い箇所のため要復習
+    let didSave: (Fruit) -> Void
+    let didCancel: () -> Void
 
     var body: some View {
         NavigationStack{
@@ -31,18 +27,14 @@ struct AddItemView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") {
-                        dismiss()
+                        didCancel()
                     }
                 }
             }
             .toolbar {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") {
-                        if !newItem.isEmpty {
-                            fruits.append(Fruit(name: newItem, isChecked: false))
-                            newItem = ""
-                        }
-                        dismiss()
+                        didSave(Fruit(name: newItem, isChecked: false))
                     }
                 }
             }
@@ -61,7 +53,7 @@ struct CustomTextFieldStyle: ViewModifier {
 struct Preview: View {
     @State var fruits = [Fruit(name: "りんご", isChecked: false)]
     var body: some View {
-        AddItemView(fruits: $fruits)
+        AddItemView(didSave: { _ in }, didCancel: {})
     }
 }
 

@@ -50,7 +50,15 @@ struct ContentView: View {
                         Image(systemName: "plus")
                     }
                     .fullScreenCover(isPresented: $showingModal) {
-                        AddItemView(fruits: $fruits)
+                        AddItemView(
+                            didSave: { fruit in
+                                fruits.append(fruit)
+                                showingModal = false
+                            },
+                            didCancel: {
+                                showingModal = false
+                            }
+                        )
                     }
                 }
             }
